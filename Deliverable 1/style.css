@@ -1,0 +1,18 @@
+#email-help {
+    padding-bottom: 12px;
+    font-size: 12px;
+}
+#password-help {
+    padding-bottom: 24px;
+    font-size: 12px;
+}
+#card-login {
+        
+        margin: 0 auto;
+        float: none;
+        margin-bottom: 10px; 
+}
+
+#checkbox-terms {
+    padding-bottom: 24px;
+}
