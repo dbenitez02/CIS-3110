@@ -1,24 +1,24 @@
 import React, { Component } from 'react';
 
-class item extends Component {
+class Item extends Component {
 
     render() {
         return(
             <React.Fragment>
-                <td style={{ width: 10}} className="text-center">
+                <td style={{ width: 10 }} className="text-center">
                     {this.props.index}
                 </td>
-                <td style= {{ width: 15}} className="text-center">
+                <td style= {{ width: 15 }} className="text-center">
                     <input type="checkbox" defaultChecked={this.props.isDone} 
-                    onChange= {() => this.props.fooDoneDone(this.props.items)} />
+                    onChange= {() => this.props.fooDoneDone(this.props.item)} />
                 </td>
                 <td>
                     {
-                        this.renderitem()
+                        this.renderItem()
                     }
                 </td>
 
-                <td style={{ width: 10}} className="text-center">
+                <td style={{ width: 10 }} className="text-center">
                     <button onClick= { () =>
                             this.props.fooDelete(this.props.item.id) } className="btn btn-danger btn-sm">Delete Item</button>
                 </td>
@@ -27,7 +27,7 @@ class item extends Component {
         );
     }
 
-    renderitem() {
+    renderItem() {
         if(this.props.item.isDone) {
             return <s>{this.props.item.value}</s>;
         } else {
@@ -37,4 +37,4 @@ class item extends Component {
 
 }
 
-export default item;
+export default Item;

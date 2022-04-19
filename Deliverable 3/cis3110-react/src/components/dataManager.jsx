@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-class dataManager extends Component {
+class DataManager extends Component {
     state = {
         defaultValue: "",
         value: this.props.addItemValue
@@ -15,13 +15,13 @@ class dataManager extends Component {
 
     clearInput = () => {
         // Clear existing value in the Input.
-        document.getElementById("itemValue").value = "";
+        document.getElementById("#itemValue").value = "";
 
         this.setState({value: ""});
     }
 
     addItem = () => {
-        // Call method reference in Items Component
+        // Call method reference in Items Component?
         this.props.fooAddItem(this.state.value);
         this.clearInput();
     }
@@ -30,16 +30,16 @@ class dataManager extends Component {
         return(
             <div className="input-group mb-3">
                 <input type="text" className="form-control" id="itemValue" placeholder="item"
-                onChange= {this.handleChange}></input>
+                    onChange={this.handleChange}></input>
 
                 <div className="input-group-append">
-                    <button onClick={this.dataManager} className="btn btn-outline-secondary" type="button"
-                    id="button-addon2">Add New To-Do</button>
+                    <button onClick={this.DataManager} className="btn btn-outline-secondary" type="button"
+                        id="button-addon2">Add New To-Do</button>
                 </div>
             </div>
-        );  // Put out integrated html and data in here
+        ); 
     }
 
 }
 
-export default dataManager;
+export default DataManager;

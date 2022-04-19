@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 
-import item from './item';
-import dataManager from './dataManager';
+import Item from './item';
+import DataManager from './dataManager';
 
-class items extends Component {
-    state = {
+class Items extends Component {
+    state = {   // Object
         addItemValue: "",
         items : [
             {
@@ -23,7 +23,7 @@ class items extends Component {
                 isDone: false
             }
         ]
-    }; // Object
+    };
 
     getTime() { // Provide timestamp
         let d = new Date();
@@ -33,7 +33,7 @@ class items extends Component {
 
     handleDelete = item => {
         const items = this.state.items.filter((i) => {
-            return i.id !==item
+            return i.id !== item
         });
         this.setState({ items });
     }
@@ -72,14 +72,14 @@ class items extends Component {
                 <tbody>
                     {this.state.items.map((item, index) => (
                         <tr key={item.id}>
-                            <item index={index+1} item={item}
+                            <Item index={index+1} item={item}
                             fooDelete={this.handleDelete} fooDoneDone={this.handleDone} />
                         </tr>
                     ))}
 
                     <tr>
                         <td colSpan="4" className="text-center">
-                            <dataManager foodataManager={this.addNewItem}
+                            <DataManager fooDataManager={this.addNewItem}
                             dataManagerValue={this.state.dataManagerValue} />
                         </td>
                     </tr>
@@ -89,4 +89,4 @@ class items extends Component {
     }
 }
 
-export default items;
+export default Items;
