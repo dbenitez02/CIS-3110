@@ -73,7 +73,7 @@ class Items extends Component {
                     {this.state.items.map((item, index) => (
                         <tr key={item.id}>
                             <Item index={index+1} item={item}
-                            fooDelete={this.handleDelete} fooDoneDone={this.handleDone} />
+                            fooDelete={this.handleDelete} fooDoneDone={this.handleDone} fooTimeStamp = {this.getTime} />
                         </tr>
                     ))}
 
@@ -81,6 +81,7 @@ class Items extends Component {
                         <td colSpan="4" className="text-center">
                             <DataManager fooDataManager={this.addNewItem}
                             dataManagerValue={this.state.dataManagerValue} />
+                            
                         </td>
                     </tr>
                 </tbody>

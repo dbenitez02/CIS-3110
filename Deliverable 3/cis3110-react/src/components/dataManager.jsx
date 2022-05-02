@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 class DataManager extends Component {
     state = {
         defaultValue: "",
-        value: this.props.addItemValue
+        value: this.props.addItemValue || ""
     }; 
 
     handleChange = (e) => {
@@ -15,25 +15,23 @@ class DataManager extends Component {
 
     clearInput = () => {
         // Clear existing value in the Input.
-        document.getElementById("#itemValue").value = "";
-
         this.setState({value: ""});
     }
 
     addItem = () => {
         // Call method reference in Items Component?
-        this.props.fooAddItem(this.state.value);
+        this.props.fooDataManager(this.state.value);
         this.clearInput();
     }
 
     render() { // put out html
         return(
             <div className="input-group mb-3">
-                <input type="text" className="form-control" id="itemValue" placeholder="item"
+                <input value={this.state.value} type="text" className="form-control" id="itemValue" placeholder="item"
                     onChange={this.handleChange}></input>
 
                 <div className="input-group-append">
-                    <button onClick={this.DataManager} className="btn btn-outline-secondary" type="button"
+                    <button onClick={this.addItem} className="btn btn-outline-secondary" type="button"
                         id="button-addon2">Add New To-Do</button>
                 </div>
             </div>

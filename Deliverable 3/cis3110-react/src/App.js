@@ -7,8 +7,8 @@ class App extends Component {
 
   render() {
     return (
-      <div classname="container">
-        <h1 classname="text-center">Beginning React.js</h1>
+      <div className="container">
+        <h1 className="text-center">Beginning React.js</h1>
         <Items />
       </div>
     );
