@@ -36,12 +36,8 @@ function getCookie(cname) //read existing cookies, if they are there...
 }
 function checkCookie() {
   let user = getCookie("username")
-  var t = getCookie("authenticated"); //username is cookiename set by me
-
-  if (t != "true") {
-      alert("cant authenticate at this time ");
-  }
-  else if(user != "") {
+  
+  if(user != "") {
       alert(`Welcome back ${user}`);
     }
   else {
